@@ -7,15 +7,21 @@ import cv2 as cv
 # But we need to make sure that we need some form of understanding and memory of a paritcular blob that enters the detection area
 
 def conotouring(frame):
-    o_frame = frame
-    gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
-    ret, thresh = cv.threshold(gray,cv.THRESH_OTSU,255,0) 
-    frame, contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
-    c_frame = cv.drawContours(o_frame, contours, -1, (0, 255, 0), 3)
+    fgbg = cv.createBackgroundSubtractorMOG2()
+    c_frame = fgbg.apply(frame)
+
+    # Contouring
+    # o_frame = frame
+    # gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
+    # ret, thresh = cv.threshold(gray,cv.THRESH_OTSU,255,0) 
+    # frame, contours, hierarchy = cv.findContours(thresh, cv.RETR_TREE, cv.CHAIN_APPROX_NONE)
+    # c_frame = cv.drawContours(o_frame, contours, -1, (0, 255, 0), 3)
+    
     return c_frame
     
 
 def main():
+
     cap = cv.VideoCapture(0)
 
     ret = True
