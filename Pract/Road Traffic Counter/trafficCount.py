@@ -9,7 +9,6 @@ import cv2 as cv
 
 
 def main():
-
     # Lets first setup our bacground subtractor
 
     # Then we subtract our background to get foreground moving objects
@@ -23,6 +22,7 @@ def main():
     # Future problem: How many cars shifted lanes, how many cars were red
 
     cap = cv.VideoCapture("input.mp4")
+    
 
     ret = True
     while ret:
