@@ -23,7 +23,7 @@ def createGaussianKernel(height, width, sigma):
     # Because g1 and g2 are both transformations. I believe that applying them individually to images is similar to multiplying them together
     # then applying to image. See the following equation
     # g1 x g2 x im
-    # (g1 x g2) x im (because of the associative property)
+    # (g1 x g2) x im (because of the associative property) where g1 and g2 are the same length but different orientation
     # and hence G x im = fin
     return G
 
@@ -93,7 +93,6 @@ def LoG():
 
     # 255/(2*max) 0.5 shift
     # Need to rescale the final image to match the previous result. But the kernel shape should be enough validation that this works
-
     cv.imshow("lap2", lap2)
 
     cv.waitKey(0)
