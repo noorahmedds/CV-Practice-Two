@@ -37,15 +37,19 @@ def harrisCornerDetector(im):
     # image, size of the neighbourhood you want to look at so basically the window size
     gray = cv.cvtColor(im, cv.COLOR_RGB2GRAY)
     dst = cv.cornerHarris(gray, 5, 3, 0.04)
+    dst2 = cv.cornerHarris(gray, 2, 3, 0.04)
+
     dst = cv.dilate(dst, None)
     # dst = cv.convertScaleAbs(dst)
     im[dst>0.01*dst.max()]=[0,0,255]
+    im[dst2>0.01*dst2.max()]=[0,255, 0]
 
     print("dst_max: ", np.max(dst))
     print("dst_mean: ", np.mean(dst))
     print("dst_mean: ", np.median(dst))
 
     cv.imshow("dst", im)
+    # cv.imshow("dst2", im)
     cv.imshow("edge", cv.Sobel(im, -1, 1, 1))
 
     cv.waitKey(0)
