@@ -8,3 +8,15 @@
 # P = fx*uav + fy*uav + ft
 # D = lambda + (fx)^2 + (fy)^2
 
+# uav is basically the avergae of the immediate neightbours of the current u and v
+# vav is same
+# fx = roberts_x(first im) + roberts_x(second im)
+# fy is same
+# ft = [-1, -1; -1, -1]*(first_im) + [1, 1; 1, 1]*(second im)
+
+def main():
+    # lets first intialize our global varibales
+    im = 
+
+if __name__ == "__main__":
+    main()
