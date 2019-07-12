@@ -1,0 +1,10 @@
+# Lets calculate the optical flow here
+# So lets try to implement simple optical flow using Horn and Schunk just because it requires me to know some linear algebra 
+# syntax so im gonna prepare myself here with that
+
+# So our optical flow equations are (after intense derivation and solving)
+# u = uav - fx(P/D)
+# v = vav - fy(P/D)
+# P = fx*uav + fy*uav + ft
+# D = lambda + (fx)^2 + (fy)^2
+
