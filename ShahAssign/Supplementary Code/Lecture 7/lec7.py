@@ -93,8 +93,8 @@ def horn_schunk(seq1, seq2, l):
 
 def main():
     # lets first intialize our global varibales
-    seq1 = cv.imread("rseq01.jpg")
-    seq2 = cv.imread("rseq02.jpg")
+    seq1 = cv.imread("seq1.png")
+    seq2 = cv.imread("seq2.png")
     seq1 = cv.cvtColor(seq1, cv.COLOR_RGB2GRAY)
     seq2 = cv.cvtColor(seq2, cv.COLOR_RGB2GRAY)
 
@@ -115,8 +115,8 @@ def opticalFlow():
     # Also receives these features to track here. So its not looking at the whole frame. Its looking at very specific
     # Portions on the frame
 
-    seq1 = cv.imread("rseq01.jpg")
-    seq2 = cv.imread("rseq02.jpg")
+    seq1 = cv.imread("seq1.png")
+    seq2 = cv.imread("seq2.png")
 
     # params for ShiTomasi corner detection
     feature_params = dict( maxCorners = 100,
@@ -160,4 +160,4 @@ def opticalFlow():
     cv.waitKey(0)
 
 if __name__ == "__main__":
-    opticalFlow()
+    main()
